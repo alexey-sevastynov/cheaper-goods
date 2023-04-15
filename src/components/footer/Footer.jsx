@@ -6,7 +6,7 @@ import brain from "./light-bulb.png";
 
 export default class Footer extends Component {
   render() {
-    const { actionButton, actionButton_Remove } = this.props;
+    const { actionButton, result } = this.props;
     return (
       <div className="footer">
         <div className="row1">
@@ -121,13 +121,13 @@ export default class Footer extends Component {
               alt="del"
             />
           </div>
-          <div className="circle">
+          <div className="circle" onClick={result}>
             <img
               className="icon"
               src={brain}
               width={60}
               height={60}
-              alt="del"
+              alt="res"
             />
           </div>
         </div>

@@ -21,6 +21,8 @@ export default class Header extends Component {
       inputActive_2,
       inputActive_3,
       inputActive_4,
+      priceKgItem_1,
+      priceKgItem_2,
     } = this.props;
 
     const styleInput_1 = input_1.active ? "active" : "";
@@ -86,7 +88,7 @@ export default class Header extends Component {
             ></input>
           </div>
         </div>
-        <Result />
+        <Result priceKgItem_1={priceKgItem_1} priceKgItem_2={priceKgItem_2} />
       </div>
     );
   }

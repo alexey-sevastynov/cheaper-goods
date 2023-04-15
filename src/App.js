@@ -7,9 +7,11 @@ import Footer from "./components/footer/Footer";
 class App extends React.Component {
   state = {
     input_1: { value: "", active: false },
-    input_2: { value: "", active: false },
+    input_2: { value: "", active: true },
     input_3: { value: "", active: false },
     input_4: { value: "", active: false },
+    priceKgItem_1: null,
+    priceKgItem_2: null,
   };
 
   changeInput_1 = (e) => {
@@ -213,8 +215,23 @@ class App extends React.Component {
     }
   };
 
-  render() {
+  result = () => {
     const { input_1, input_2, input_3, input_4 } = this.state;
+
+    const weightItem_1 = +input_1.value.replace(",", ".");
+    const priceItem_1 = +input_2.value.replace(",", ".");
+    const weightItem_2 = +input_3.value.replace(",", ".");
+    const priceItem_2 = +input_4.value.replace(",", ".");
+
+    const oneKgItem_1 = ((priceItem_1 / weightItem_1) * 1000).toFixed(1);
+    const oneKgItem_2 = ((priceItem_2 / weightItem_2) * 1000).toFixed(1);
+
+    this.setState({ priceKgItem_1: oneKgItem_1, priceKgItem_2: oneKgItem_2 });
+  };
+
+  render() {
+    const { input_1, input_2, input_3, input_4, priceKgItem_1, priceKgItem_2 } =
+      this.state;
 
     return (
       <div className="App">
@@ -232,10 +249,13 @@ class App extends React.Component {
             inputActive_2={this.inputActive_2}
             inputActive_3={this.inputActive_3}
             inputActive_4={this.inputActive_4}
+            priceKgItem_1={priceKgItem_1}
+            priceKgItem_2={priceKgItem_2}
           />
           <Footer
             actionButton={this.actionButton}
             actionButton_Remove={this.actionButton_Remove}
+            result={this.result}
           />
         </div>
       </div>
