@@ -69,19 +69,17 @@
 
 
 @media (max-height: 780px) {
-    .circle {
-        width: 80px;
-        height: 80px;
-        line-height: 80px;
+    .footer {
+        height: 55%;
+
     }
 }
 
 
 
 @media (max-height: 740px) {
-    .circle {
-        width: 70px;
-        height: 70px;
-        line-height: 70px;
+    .footer {
+        height: 60%;
+
     }
 }

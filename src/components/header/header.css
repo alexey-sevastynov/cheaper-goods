@@ -94,3 +94,17 @@ input {
     background-color: #4E4E4E;
     color: white;
 }
+
+
+@media (max-height: 780px) {
+    .header {
+        height: 45%;
+    }
+}
+
+@media (max-height: 740px) {
+    .footer {
+        height: 40%;
+
+    }
+}
