@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import "./footer.css";
+import { Link } from "react-router-dom";
 
 import remove from "./delete.png";
 import brain from "./light-bulb.png";
+import calc from "./calculator.png";
 import cleaning from "./cleaning.png";
 
 export default class Footer extends Component {
   render() {
-    const { actionButton, result, cleaner } = this.props;
+    const { actionButton, result, cleaner, togglePage } = this.props;
     return (
       <div className="footer">
         <div className="row1">
@@ -131,15 +133,27 @@ export default class Footer extends Component {
               alt="del"
             />
           </div>
-          <div className="circle" onClick={result}>
-            <img
-              className="icon"
-              src={brain}
-              width={60}
-              height={60}
-              alt="res"
-            />
-          </div>
+          {togglePage ? (
+            <Link to="/" className="circle" onClick={result}>
+              <img
+                className="icon"
+                src={calc}
+                width={60}
+                height={60}
+                alt="res"
+              />
+            </Link>
+          ) : (
+            <Link to="result" className="circle" onClick={result}>
+              <img
+                className="icon"
+                src={brain}
+                width={60}
+                height={60}
+                alt="res"
+              />
+            </Link>
+          )}
         </div>
       </div>
     );

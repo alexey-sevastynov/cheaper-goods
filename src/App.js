@@ -1,8 +1,13 @@
 import React from "react";
 
+import { Routes, Route, Link } from "react-router-dom";
+
 import "./App.css";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
+import Layout from "./components/Layout/Layout";
+import MainPage from "./components/page/MainPage";
+import ResultPage from "./components/page/ResultPage";
 
 class App extends React.Component {
   state = {
@@ -12,6 +17,7 @@ class App extends React.Component {
     input_4: { value: "", active: false },
     priceKgItem_1: null,
     priceKgItem_2: null,
+    togglePage: false,
   };
 
   changeInput_1 = (e) => {
@@ -216,7 +222,7 @@ class App extends React.Component {
   };
 
   result = () => {
-    const { input_1, input_2, input_3, input_4 } = this.state;
+    const { input_1, input_2, input_3, input_4, togglePage } = this.state;
 
     const weightItem_1 = +input_1.value.replace(",", ".");
     const priceItem_1 = +input_2.value.replace(",", ".");
@@ -227,6 +233,12 @@ class App extends React.Component {
     const oneKgItem_2 = ((priceItem_2 / weightItem_2) * 1000).toFixed(1);
 
     this.setState({ priceKgItem_1: oneKgItem_1, priceKgItem_2: oneKgItem_2 });
+
+    this.setState(({ togglePage }) => {
+      return {
+        togglePage: !togglePage,
+      };
+    });
   };
 
   cleaner = () => {
@@ -241,13 +253,65 @@ class App extends React.Component {
   };
 
   render() {
-    const { input_1, input_2, input_3, input_4, priceKgItem_1, priceKgItem_2 } =
-      this.state;
+    const {
+      input_1,
+      input_2,
+      input_3,
+      input_4,
+      priceKgItem_1,
+      priceKgItem_2,
+      togglePage,
+    } = this.state;
 
     return (
       <div className="App">
-        <div className="container">
-          <Header
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Layout
+                actionButton={this.actionButton}
+                actionButton_Remove={this.actionButton_Remove}
+                result={this.result}
+                cleaner={this.cleaner}
+                togglePage={togglePage}
+              />
+            }
+          >
+            <Route
+              index
+              element={
+                <MainPage
+                  input_1={input_1}
+                  changeInput_1={this.changeInput_1}
+                  input_2={input_2}
+                  changeInput_2={this.changeInput_2}
+                  input_3={input_3}
+                  changeInput_3={this.changeInput_3}
+                  input_4={input_4}
+                  changeInput_4={this.changeInput_4}
+                  inputActive_1={this.inputActive_1}
+                  inputActive_2={this.inputActive_2}
+                  inputActive_3={this.inputActive_3}
+                  inputActive_4={this.inputActive_4}
+                  priceKgItem_1={priceKgItem_1}
+                  priceKgItem_2={priceKgItem_2}
+                />
+              }
+            />
+            <Route
+              path="result"
+              element={
+                <ResultPage
+                  priceKgItem_1={priceKgItem_1}
+                  priceKgItem_2={priceKgItem_2}
+                />
+              }
+            />
+          </Route>
+        </Routes>
+
+        {/* <Header
             input_1={input_1}
             changeInput_1={this.changeInput_1}
             input_2={input_2}
@@ -268,8 +332,7 @@ class App extends React.Component {
             actionButton_Remove={this.actionButton_Remove}
             result={this.result}
             cleaner={this.cleaner}
-          />
-        </div>
+          /> */}
       </div>
     );
   }
