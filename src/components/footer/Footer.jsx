@@ -3,10 +3,11 @@ import "./footer.css";
 
 import remove from "./delete.png";
 import brain from "./light-bulb.png";
+import cleaning from "./cleaning.png";
 
 export default class Footer extends Component {
   render() {
-    const { actionButton, result } = this.props;
+    const { actionButton, result, cleaner } = this.props;
     return (
       <div className="footer">
         <div className="row1">
@@ -34,7 +35,16 @@ export default class Footer extends Component {
           >
             3
           </div>
-          <div className="circle">!</div>
+          <div className="circle">
+            <img
+              className="icon"
+              onClick={cleaner}
+              src={cleaning}
+              width={50}
+              height={50}
+              alt="del"
+            />
+          </div>
         </div>
         <div className="row1">
           <div
@@ -61,7 +71,7 @@ export default class Footer extends Component {
           >
             6
           </div>
-          <div className="circle">!</div>
+          <div className="circle"></div>
         </div>
         <div className="row1">
           <div
@@ -88,7 +98,7 @@ export default class Footer extends Component {
           >
             9
           </div>
-          <div className="circle">!</div>
+          <div className="circle"></div>
         </div>
         <div className="row1">
           <div

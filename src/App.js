@@ -7,7 +7,7 @@ import Footer from "./components/footer/Footer";
 class App extends React.Component {
   state = {
     input_1: { value: "", active: false },
-    input_2: { value: "", active: true },
+    input_2: { value: "", active: false },
     input_3: { value: "", active: false },
     input_4: { value: "", active: false },
     priceKgItem_1: null,
@@ -229,6 +229,17 @@ class App extends React.Component {
     this.setState({ priceKgItem_1: oneKgItem_1, priceKgItem_2: oneKgItem_2 });
   };
 
+  cleaner = () => {
+    this.setState(({ input_1, input_2, input_3, input_4 }) => {
+      return {
+        input_1: { ...input_1, value: "" },
+        input_2: { ...input_2, value: "" },
+        input_3: { ...input_3, value: "" },
+        input_4: { ...input_4, value: "" },
+      };
+    });
+  };
+
   render() {
     const { input_1, input_2, input_3, input_4, priceKgItem_1, priceKgItem_2 } =
       this.state;
@@ -256,6 +267,7 @@ class App extends React.Component {
             actionButton={this.actionButton}
             actionButton_Remove={this.actionButton_Remove}
             result={this.result}
+            cleaner={this.cleaner}
           />
         </div>
       </div>
