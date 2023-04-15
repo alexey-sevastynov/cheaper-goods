@@ -41,6 +41,7 @@ export default class Header extends Component {
               value={input_1.value}
               onChange={changeInput_1}
               onClick={inputActive_1}
+              placeholder="grams of goods 1..."
             ></input>
             <img
               className="weight-img"
@@ -57,6 +58,7 @@ export default class Header extends Component {
               value={input_2.value}
               onChange={changeInput_2}
               onClick={inputActive_2}
+              placeholder="UAH of goods 1..."
             ></input>
             <img
               className="price-img"
@@ -76,6 +78,7 @@ export default class Header extends Component {
               value={input_3.value}
               onChange={changeInput_3}
               onClick={inputActive_3}
+              placeholder="grams of goods 2..."
             ></input>
           </div>
           <div className="header-input-2">
@@ -85,6 +88,7 @@ export default class Header extends Component {
               value={input_4.value}
               onChange={changeInput_4}
               onClick={inputActive_4}
+              placeholder="UAH of goods 2..."
             ></input>
           </div>
         </div>
