@@ -43,13 +43,11 @@ export default class Header extends Component {
               onClick={inputActive_1}
               placeholder="grams of goods 1..."
             ></input>
-            <img
-              className="weight-img"
-              src={weight}
-              alt="weight"
-              width={75}
-              height={75}
-            ></img>
+            <p className="title">
+              weight
+              <br />
+              (вага)
+            </p>
           </div>
           <div className="header-input-2">
             <input
@@ -60,13 +58,11 @@ export default class Header extends Component {
               onClick={inputActive_2}
               placeholder="UAH of goods 1..."
             ></input>
-            <img
-              className="price-img"
-              src={price}
-              alt="price"
-              width={75}
-              height={75}
-            ></img>
+            <p className="title">
+              price
+              <br />
+              (ціна)
+            </p>
           </div>
         </div>
         <div className="row3">

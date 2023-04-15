@@ -20,7 +20,7 @@
     height: 90px;
     border-radius: 100%;
     text-align: center;
-    line-height: 90px;
+    line-height: 190%;
     font-size: 48px;
     color: white;
 
@@ -65,4 +65,21 @@
     left: 50%;
 
     transform: translateX(-50%) translateY(-50%);
+}
+
+
+@media (max-height: 800px) {
+    .circle {
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+    }
+}
+
+@media (max-height: 740px) {
+    .circle {
+        width: 70px;
+        height: 70px;
+        line-height: 70px;
+    }
 }
