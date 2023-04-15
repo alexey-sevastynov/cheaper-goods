@@ -103,7 +103,7 @@ input {
 }
 
 @media (max-height: 740px) {
-    .footer {
+    .header {
         height: 40%;
 
     }

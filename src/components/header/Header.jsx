@@ -88,7 +88,7 @@ export default class Header extends Component {
             ></input>
           </div>
         </div>
-        <Result priceKgItem_1={priceKgItem_1} priceKgItem_2={priceKgItem_2} />
+        {/* <Result priceKgItem_1={priceKgItem_1} priceKgItem_2={priceKgItem_2} /> */}
       </div>
     );
   }
