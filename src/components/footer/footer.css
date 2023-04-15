@@ -68,13 +68,15 @@
 }
 
 
-@media (max-height: 800px) {
+@media (max-height: 780px) {
     .circle {
         width: 80px;
         height: 80px;
         line-height: 80px;
     }
 }
+
+
 
 @media (max-height: 740px) {
     .circle {
