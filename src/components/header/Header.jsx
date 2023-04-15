@@ -4,6 +4,7 @@ import "./header.css";
 import price from "./price.png";
 import weight from "./weight.png";
 import goods from "./product.png";
+import Result from "../result/Result";
 
 export default class Header extends Component {
   render() {
@@ -22,12 +23,18 @@ export default class Header extends Component {
       inputActive_4,
     } = this.props;
 
+    const styleInput_1 = input_1.active ? "active" : "";
+    const styleInput_2 = input_2.active ? "active" : "";
+    const styleInput_3 = input_3.active ? "active" : "";
+    const styleInput_4 = input_4.active ? "active" : "";
+
     return (
       <div className="header">
         <div className="row2">
           <img src={goods} alt="goods" width={75} height={75}></img>
           <div className="header-input-1">
             <input
+              className={styleInput_1}
               readOnly
               value={input_1.value}
               onChange={changeInput_1}
@@ -44,6 +51,7 @@ export default class Header extends Component {
           <div className="header-input-2">
             <input
               readOnly
+              className={styleInput_2}
               value={input_2.value}
               onChange={changeInput_2}
               onClick={inputActive_2}
@@ -62,6 +70,7 @@ export default class Header extends Component {
           <div className="header-input-1">
             <input
               readOnly
+              className={styleInput_3}
               value={input_3.value}
               onChange={changeInput_3}
               onClick={inputActive_3}
@@ -70,12 +79,14 @@ export default class Header extends Component {
           <div className="header-input-2">
             <input
               readOnly
+              className={styleInput_4}
               value={input_4.value}
               onChange={changeInput_4}
               onClick={inputActive_4}
             ></input>
           </div>
         </div>
+        <Result />
       </div>
     );
   }

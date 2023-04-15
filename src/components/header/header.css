@@ -19,6 +19,24 @@
 
 input {
     line-height: 75px;
+    padding: 0 3px;
+    border: none;
+    background-image: none;
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    box-sizing: border-box;
+}
+
+.no-outline:focus {
+    outline: none;
+}
+
+
+.active {
+    background-color: rgb(146, 34, 0);
+    box-sizing: border-box;
 }
 
 

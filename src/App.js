@@ -7,7 +7,7 @@ import Footer from "./components/footer/Footer";
 class App extends React.Component {
   state = {
     input_1: { value: "", active: false },
-    input_2: { value: "", active: true },
+    input_2: { value: "", active: false },
     input_3: { value: "", active: false },
     input_4: { value: "", active: false },
   };

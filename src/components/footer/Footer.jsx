@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./footer.css";
 
 import remove from "./delete.png";
+import brain from "./light-bulb.png";
 
 export default class Footer extends Component {
   render() {
@@ -113,14 +114,22 @@ export default class Footer extends Component {
             }}
           >
             <img
-              className="remove"
+              className="icon"
               src={remove}
               width={42}
               height={42}
               alt="del"
             />
           </div>
-          <div className="circle">!</div>
+          <div className="circle">
+            <img
+              className="icon"
+              src={brain}
+              width={60}
+              height={60}
+              alt="del"
+            />
+          </div>
         </div>
       </div>
     );
